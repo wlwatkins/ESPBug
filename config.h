@@ -34,16 +34,17 @@ char stationIP[50];
 char stationMac[32];
 int stationID = 0;
 
-const char *whiteHatDefault= "1";
+const char *whiteHatDefault= "0";
+const char *esportalenabledDefault = "0";
 
-const char *ssidDefault= "HP-LaserJet";
-const char *passwordDefault = "";
-const char *channelDefault= "6";
-const char *hiddenDefault = "0";
+const char *ssidDefault= "espbug";
+const char *passwordDefault = "password";
+const char *channelDefault= "11";
+const char *hiddenDefault = "1";
 
-const char *local_IPDefault = "8.8.8.8";
+const char *local_IPDefault = "192.168.1.1";
 const char *local_MACDefault = "A4:CF:12:BF:5D:30";
-const char *gatewayDefault = "8.8.8.8";
+const char *gatewayDefault = "192.168.1.1";
 const char *subnetDefault = "255.255.255.0";
 
 const char *update_usernameDefault = "espbug";
@@ -52,7 +53,7 @@ const char *update_passwordDefault = "password";
 const char *ftp_usernameDefault = "espbug";
 const char *ftp_passwordDefault = "password";
 const char *ftpenabledDefault = "1";
-const char *esportalenabledDefault = "1";
+
 
 
 const char *whiteHatAttack =  "0";

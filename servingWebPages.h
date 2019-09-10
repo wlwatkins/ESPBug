@@ -271,6 +271,7 @@ void startAP() {
     });
 
     server.on(String(F("/viewlogs")).c_str(), HTTP_GET, [](){
+      requireAuthentication();
       sendProgmem(viewlogshtml, sizeof(viewlogshtml), W_HTML);
     });
 

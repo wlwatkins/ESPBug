@@ -10,7 +10,7 @@ void startSPIFFS(){
   f1.close();
 
   File f2 = SPIFFS.open("/phishinglogs", "a");
-  // f2.println("[]");
+  f2.println("[]");
   f2.close();
 }
 
@@ -116,6 +116,6 @@ void wipeLog(const char *file, const char *empty){
 
   SPIFFS.remove(file);
   File f = SPIFFS.open(file, "a");
-  f.println(empty);
+  f.println("[]");
   f.close();
 }

