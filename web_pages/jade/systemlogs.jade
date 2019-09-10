@@ -1,0 +1,80 @@
+//output:../systemlogs.html
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv="content-type" content="text/html; charset=utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=0.8, minimal-ui')
+    title ESP PORTAL
+    link(rel='stylesheet', href='/milligram.min.css')
+    link(rel='stylesheet', href='/normalize.min.css')
+    link(rel='stylesheet', href='/main.css')
+    script(src='/jquery.slim.min.js')
+    script(src='/main.js')
+
+  body
+    main.wrapper
+    
+      nav.navigation
+        section.container
+          .navigation-title
+            a.button(href='/espportal') Home
+          .float-right.navigation-title ESPORTAL
+          
+      section.container
+        .row
+          .column
+            h1#titleh1 
+            
+            pre
+              code.code-content#logPrint
+            a(href='/download_system_logs').button Download logs
+            |  
+            a(href='/wipe_system_logs').button.button-outline Wipe logs
+
+            
+script.
+  function loadJson(){
+    getFile("/log",function(res){
+        var log = res;
+        printLog(log);
+    });
+
+  }
+  
+  function printLog(log){
+    if (log == "") {
+      $("#logPrint").append('LOGS ARE EMPTY')
+    }
+    else {
+    
+      var lines = log.split('\n');
+      var arrayLength = lines.length;
+              
+      
+      for (var i = 0; i < arrayLength; i++) {
+          console.log(lines[i]);
+          $("#logPrint").append('<span>' + lines[i] + '</span>')
+
+      }
+    }
+  }
+
+
+  
+script.
+  
+  $(document).ready(function() {
+    var pathname = window.location.pathname;
+    if(pathname == "error"){
+      $('#titleh1').text("Something went wrong");
+    } else{
+      $('#titleh1').text("System logs");
+    }
+    
+    loadJson();
+        
+  });
+
+            
+            

@@ -1,0 +1,152 @@
+//output:../settings.html
+doctype html
+html
+  head
+    meta(content="text/html;charset=utf-8" http-equiv="Content-Type")
+    meta(content="utf-8" http-equiv="encoding")
+    meta(name='viewport', content='width=device-width, initial-scale=0.8, minimal-ui')
+    title ESP PORTAL
+    link(rel='stylesheet', href='/milligram.min.css')
+    link(rel='stylesheet', href='/normalize.min.css')
+    link(rel='stylesheet', href='/main.css')
+    script(src='/jquery.slim.min.js')
+    script(src='/main.js')
+
+  body
+    main.wrapper
+    
+      nav.navigation
+        section.container
+          .navigation-title
+            a.button(href='/espportal') Home
+          .float-right.navigation-title ESPORTAL
+          
+      section.container
+        .row
+          .column
+            h1 Settings
+            
+            form(action="/settings", id="configuration", method="post")
+              input.redirectjs.button-primary(value='Apply and reboot', type='submit')
+              |  
+              a(href='/reset_settings').redirectjs.button.button-outline Reset defaults
+              fieldset
+                label(for='hat') Hat colour
+                select#hat(name = "whiteHat")
+                  option(value="1", selected) White Hat
+                  option(value="0") Black Hat
+                label(for='protal') Enable portal
+                select#protal(name='esportalenabled', form='configuration')
+                  option(value="0") NO
+                  option(value="1", selected) YES
+                  
+                br
+                br
+                h4 WiFi settings
+                label(for='ssid') SSID
+                input#ssid( name='ssid', type='text')
+                     
+                label(for='wifipwd') Password
+                input#wifipwd(placeholder="empty", pattern=".{8,31}",  name="password", type='text') 
+                
+                
+                label(for='wifich') Channel
+                select#wifich(name='channel', form='configuration')
+                  option(value"=1", selected) 1
+                  option(value"=2") 2
+                  option(value"=3") 3
+                  option(value"=4") 4
+                  option(value"=5") 5
+                  option(value"=6") 6
+                  option(value"=7") 7
+                  option(value"=8") 8
+                  option(value"=9") 9
+                  option(value="10") 10
+                  option(value="11") 11
+                  option(value="12") 12
+                  option(value="13") 13
+                  option(value="14") 14
+                br
+                label(for='wifihidden') Hidden
+                select#wifihidden(name='hidden', form='configuration')
+                  option(value=0, selected) NO
+                  option(value=1) YES
+                
+ 
+                br
+                br
+                label(for='wifiip') IP
+                input#wifiip(name="local_IPstr", type='text')
+                label(for='wifiGateway') Gateway
+                input#wifiGateway( name="gatewaystr", type='text')  
+                label(for='wifiSubnet') Subnet
+                input#wifiSubnet( name="subnetstr", type='text')   
+                
+                br
+                br
+                h4 ESPortal Administration Settings
+                label(for='espuser') Username
+                input#espuser( name="update_username", type='text')
+                     
+                label(for='esppwd') Password
+                input#esppwd(placeholder="empty", name="update_password", type='text') 
+                
+                br
+                br
+                h4 FTP Server Settings
+                label(for='ftpenable') Enable
+                select#ftpenable(name='ftpenabled', form='configuration')
+                  option(value="0") NO
+                  option(value="1", selected) YES
+                label(for='ftpuser') Username
+                input#ftpuser( name="ftp_username", type='text')
+                     
+                label(for='ftppwd') Password
+                input#ftppwd( name="ftp_password", pattern=".{8,31}", type='text') 
+                
+                br
+              
+                br 
+                input(type='hidden' ,checked="checked", name="SETTINGS" value="1")
+                input.redirectjs.button-primary(value='Apply and reboot', type='submit')
+                |  
+                a(href='/reset_settings').redirectjs.button.button-outline Reset defaults
+
+                
+script.
+  function loadJson(){
+    getFile("/json/settings.json",function(res){
+      var json = JSON.parse(res);
+      console.log(json);
+      if ($.isEmptyObject(json)) {
+        alert("Setting Json is empty - it should not be!");
+      }
+      else {
+        $('input[name=ssid]').val(json.ssid);
+        $('input[name=password]').val(json.password);
+        $('select[name=channel]').val(json.channel);
+        $('select[name=hidden]').val(json.hidden);
+        $('select[name=whiteHat]').val(json.whiteHat);
+        $('select[name=esportalenabled]').val(json.esportalenabled);
+        $('input[name=local_IPstr]').val(json.local_IP);
+        $('input[name=gatewaystr]').val(json.gateway);
+        $('input[name=subnetstr]').val(json.subnet);
+        $('input[name=update_username]').val(json.update_username);
+        $('input[name=update_password]').val(json.update_password);
+        $('input[name=ftp_username]').val(json.ftp_username);
+        $('input[name=ftp_password]').val(json.ftp_password);
+        $('select[name=ftpenabled]').val(json.ftpenabled);
+      }
+    });
+  }
+
+
+script.
+  $(document).ready(function() {
+    loadJson();
+    $(".redirectjs").click(function(){
+      setTimeout(function(){
+        window.location.href = "/espportal";
+      }, 20000);
+    });
+  }); 

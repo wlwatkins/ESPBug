@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, minimal-ui">
+    <title>ESP PORTAL</title>
+    <link rel="stylesheet" href="/milligram.min.css">
+    <link rel="stylesheet" href="/normalize.min.css">
+    <link rel="stylesheet" href="/main.css">
+    <script src="/jquery.slim.min.js"></script>
+    <script src="/main.js"></script>
+  </head>
+  <body>
+    <main class="wrapper">
+      <nav class="navigation">
+        <section class="container">
+          <div class="navigation-title"><a href="/espportal" class="button">Home</a></div>
+          <div class="float-right navigation-title">ESPORTAL</div>
+        </section>
+      </nav>
+      <section class="container">
+        <div class="row">
+          <div class="column">
+            <h1>Upload firmware</h1>
+            <ul>
+              <li>Open Arduino IDE.</li>
+              <li>Pull down Sketch Menu then select Export Compiled Binary.</li>
+              <li>Open Sketch Folder and upload the exported BIN file.</li>
+              <li>You may need to manually reboot the device to reconnect.</li>
+            </ul><br>
+            <iframe id="uploadifram" style="border: 0; height: 100%;"></iframe><a id="uploadbutton" class="redirectjs button"></a>
+            
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+<script>
+  function loadJsonConfig(){
+    getFile("/json/system.json",function(res){
+      console.log(res);
+      var json = JSON.parse(res);
+      if ($.isEmptyObject(json)) {
+        alert("Setting Json is empty - it should not be!");
+      }
+      else 
+      {
+        console.log(json);
+        var url = "http://"+json.local_IP+":1337/update";
+        $('#uploadifram').attr('src',url);   
+        $('#uploadbutton').attr('href',url);   
+  
+        } 
+      
+    });
+  }
+  
+  
+</script>
+<script>
+  $(document).ready(function() {
+  
+    loadJsonConfig();
+    
+    $(".redirectjs").click(function(){
+      setTimeout(function(){
+        window.location.href = "/espportal";
+      }, 60000);
+    });
+  });        
+            
+                      
+</script>

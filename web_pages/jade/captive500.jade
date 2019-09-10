@@ -1,0 +1,31 @@
+//output:../captive500.html
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    |   
+    meta(name='viewport', content='initial-scale=1, minimum-scale=1, width=device-width')
+    |   
+    title Success 
+    |   
+    script(src='/jquery.slim.min.js')
+    script(src='jquery.slim.min.js')
+    script(src='main.js')
+    script(src='/main.js')
+  body
+    
+    |   
+    p
+      b You are logged in
+      
+
+script.
+  $(document).ready(function() {
+      setTimeout(function(){
+        getFile("/shutdown",function(res){
+          console.log(bye);
+        });
+      }, 500);
+  
+  });  
+  

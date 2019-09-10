@@ -1,0 +1,15 @@
+{
+  "ssid": "HP-LasetJet-ESP",
+  "password":  "",
+  "channel": "6",
+  "hidden":  "0",
+  "whiteHat": "1",
+  "local_IP":  "192.168.1.1",
+  "gateway":  "192.168.1.1",
+  "subnet":  "255.255.255.0",
+  "update_username":  "admin",
+  "update_password":  "admin",
+  "ftp_username":  "ftp-admin",
+  "ftp_password":  "hacktheplanet",
+  "ftpenabled":  "1"
+}
