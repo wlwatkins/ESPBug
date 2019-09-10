@@ -1,6 +1,0 @@
-
-  //- setTimeout(function(){
-  //-   getFile("/shutdown",function(res){
-  //-     console.log(bye);
-  //-   });
-  //- }, 500);
