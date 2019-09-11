@@ -35,12 +35,12 @@ char stationMac[32];
 int stationID = 0;
 
 const char *whiteHatDefault= "0";
-const char *esportalenabledDefault = "1";
+const char *esportalenabledDefault = "0";
 
-const char *ssidDefault= "paul";
-const char *passwordDefault = "";
+const char *ssidDefault= "espbug";
+const char *passwordDefault = "password";
 const char *channelDefault= "11";
-const char *hiddenDefault = "0";
+const char *hiddenDefault = "1";
 
 const char *local_IPDefault = "192.168.1.1";
 const char *local_MACDefault = "A4:CF:12:BF:5D:30";
