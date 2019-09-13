@@ -1,6 +1,6 @@
 # ESPBug
 
-ESPBug is a millicious captive portal program which runs on the ESP8266 dev board, such as the NodeMCU (clones included). It is a social engennering tool which generates a WiFi network of a given name alluring people to connect  to it and enter some credential.
+ESPBug is a rogue captive portal program which runs on the ESP8266 dev board, such as the NodeMCU (clones included). It is a social engennering tool which generates a WiFi network of a given name alluring people to connect  to it and enter some credential.
 
 # DISCLAIMER
 The source code given in this public repo is for educational use only. Stealing credential might be illegal depending on where you live. I am not liable for any actions on your behalf. This code is given with no warranties and liabilities. **Just be responsible OK?**
