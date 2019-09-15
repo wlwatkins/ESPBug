@@ -11,14 +11,13 @@ Here are a few screenshots from my phone showing off the web interface, and what
 
 ![Imgur1](https://i.imgur.com/qYyqwnQl.jpg)
 
-
 When you connect to the ESPBug, go to any domain name and to the **espportal** page (e.g. `http://espbug.com/espportal`)
-You should be shown a pop up window asking you for the password. Defaults are `Username: **espbug**` and `Password: **password**`.
+You should be shown a pop up window asking you for the password. Defaults are `Username: espbug` and `Password: password`.
 From there you are redirected to the home page.
 
-
-
 ![Imgur2](https://i.imgur.com/NgNZkYol.jpg)
+![Imgur3](https://i.imgur.com/OgYxvRyl.jpg)
+
 
 
 # Installation
