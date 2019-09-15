@@ -1,9 +1,21 @@
 # ESPBug
 
-ESPBug is a rogue captive portal program which runs on the ESP8266 dev board, such as the NodeMCU (clones included). It is a social engennering tool which generates a WiFi network of a given name alluring people to connect  to it and enter some credential.
+ESPBug is a millicious captive portal program which runs on the ESP8266 dev board, such as the NodeMCU (clones included). It is a social engennering tool which generates a WiFi network of a given name alluring people to connect  to it and enter some credential.
 
 # DISCLAIMER
 The source code given in this public repo is for educational use only. Stealing credential might be illegal depending on where you live. I am not liable for any actions on your behalf. This code is given with no warranties and liabilities. **Just be responsible OK?**
+
+# Demonstration & How tos
+
+Here are a few screenshots from my phone showing off the web interface, and what each settings do.
+
+[Imgur1](https://imgur.com/qYyqwnQm)
+When you connect to the ESPBug, go to any domain name and to the **espportal** page (e.g. `http://espbug.com/espportal`)
+You should be shown a pop up window asking you for the password. Defaults are `Username: **espbug**` and `Password: **password**`.
+From there you are redirected to the home page.
+s
+[Imgur2](https://imgur.com/NgNZkYom)
+
 
 # Installation
 To get this code running on a nodeMCU like board - such as the one illustrated below - you need to install the [Arduino IDE] (! I have only tried on Linux, but this should work on any OS - virtual machine included).
