@@ -7,7 +7,7 @@ The source code given in this public repo is for educational use only. Stealing 
 
 # Demonstration & How tos
 
-[![Pocket board for phishing passwords - ESPBUG](https://i.imgur.com/PYyQzfI.jpg)](https://www.youtube.com/watch?v=X95rtPqSzw4 "Pocket board for phishing passwords - ESPBUG - Click to Watch!"){:target="_blank"}
+[![Pocket board for phishing passwords - ESPBUG](https://i.imgur.com/PYyQzfI.jpg)](https://www.youtube.com/watch?v=X95rtPqSzw4 "Pocket board for phishing passwords - ESPBUG - Click to Watch!")
 
 
 Here are a few screenshots from my phone showing off the web interface, and what each settings do. The fist image is an example of a captive portal seen by the victim. **Would you enter you password?**
