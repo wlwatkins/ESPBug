@@ -19,6 +19,27 @@ From there you are redirected to the home page.
 ![Imgur3](https://i.imgur.com/OgYxvRyl.jpg)
 
 
+You want to go to the settings to prepare the hook. Let's go through all the settings to understand what they do.
+
+![Imgur4](https://i.imgur.com/lxz6Apwl.jpg)
+![Imgur5](https://i.imgur.com/LeBXPztl.jpg)
+
+ - Hat colour (choices: **Black Hat** or **White Hat**): This gives you the object to be an arse or a crap arse. Basically the **White Hat** option redirects the victim to a webpage telling them what just happened and how to protect themselves against phishing attacks. The **Black Hat** immediately disconnects after the victim entered their credentials.
+ - Enable portal (choices: **ON** or **OFF**): Basically enables the phishing portal.
+ - SSID: Set up the SSID of the device. By default it is **espbug**. When a phishing attack occured, it defaults back to this name so you can connect and see the logs. You can name it what you want to lure victims.
+ - Password: This is the WiFi's password. By default it is **password**, however, you want this blank when you are carrying an attack so victims can connect to the WiFi. Again, when an attack as succesfully happened, the password defaults back to **password**.
+ **You can change these defalts in the source code - might add the option to change that in the settings if you ask for it.**
+ - Channel (choices: **1** to **14**): This is the WiFi channel on the 2.4GHz so from 1 to 14.
+ - Hidden (choices: **YES** or **NO**): **This is important!**  By default, the WiFi is hidden, that means to connect to the **espbug** you must manually enter the **ssid** and **password**. When an attack occured, the WiFi is hidden again, so you should connect to the device automatically with the same station. However, during an attack you want the WiFi to be visible, so set this to **NO**.
+ - IP: This is the IP of the **espbug**. By default you can leave the `192.168.1.1`. However during an attack you might want to switch to `8.8.8.8`. This enables the victim's device to automatically show the sign up screen when they connect to the WiFi.
+ - GateWay: Same as IP, keep these values the same.
+ - Subnet: Do not change if you don't know what you're doing.
+ - Username: Default is **espbug**. Put what you want. This is the username to enter when you connect to the webpage. To access the settings etc...
+ - Password: Default is **password**. As the Username. Put what you want here.
+
+ - FTP: **STILL UNDER DEV.**
+
+
 
 # Installation
 To get this code running on a nodeMCU like board - such as the one illustrated below - you need to install the [Arduino IDE] (! I have only tried on Linux, but this should work on any OS - virtual machine included).
