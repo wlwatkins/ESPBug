@@ -9,12 +9,12 @@ The source code given in this public repo is for educational use only. Stealing 
 
 Here are a few screenshots from my phone showing off the web interface, and what each settings do.
 
-![Imgur1](https://i.imgur.com/qYyqwnQm.jpg)
+![Imgur1](https://i.imgur.com/qYyqwnQl.jpg)
 When you connect to the ESPBug, go to any domain name and to the **espportal** page (e.g. `http://espbug.com/espportal`)
 You should be shown a pop up window asking you for the password. Defaults are `Username: **espbug**` and `Password: **password**`.
 From there you are redirected to the home page.
 s
-![Imgur2](https://i.imgur.com/NgNZkYom.jpg)
+![Imgur2](https://i.imgur.com/NgNZkYol.jpg)
 
 
 # Installation
