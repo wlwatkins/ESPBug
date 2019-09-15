@@ -7,8 +7,12 @@ The source code given in this public repo is for educational use only. Stealing 
 
 # Demonstration & How tos
 
-Here are a few screenshots from my phone showing off the web interface, and what each settings do.
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/X95rtPqSzw4/0.jpg)](https://www.youtube.com/watch?v=X95rtPqSzw4)
 
+
+Here are a few screenshots from my phone showing off the web interface, and what each settings do. The fist image is an example of a captive portal seen by the victim. **Would you enter you password?**
+
+![Imgur0](https://i.imgur.com/FRVuEwBl.jpg)
 ![Imgur1](https://i.imgur.com/qYyqwnQl.jpg)
 
 When you connect to the ESPBug, go to any domain name and to the **espportal** page (e.g. `http://espbug.com/espportal`)
