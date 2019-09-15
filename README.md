@@ -99,7 +99,7 @@ Port : "<USB PORT>"
 
 # CREDITS where credit is due
 
-Most of the code is strongly inspired by different repo from github, I just wanetd to mention them here.
+Most of the code is strongly inspired by different repo from github, I just wanted to mention them here.
 * [ESPortalV2] - https://github.com/exploitagency/ESPortalV2
 * [github-ESPortal] - https://github.com/exploitagency/github-ESPortal
 * [esp8266_deauther] - https://github.com/spacehuhn/esp8266_deauther
@@ -109,12 +109,12 @@ Most of the code is strongly inspired by different repo from github, I just wane
 
 ### Todos
 
- - Finish README.md
  - Have FTP Working
  - Make more captive portal HTML pages
 
 ### Known bugs
-- In white Hat mode, the explination page is closed automatically when using `8.8.8.8`. Don't know yet how this can be fixed
+- In white Hat mode, the explanation page is closed automatically when using `8.8.8.8`. Don't know yet how this can be fixed
+- There might be an issue with the IPs showing from the connected devices, they are all identical and sometimes erroneous.
 
 License
 ----
