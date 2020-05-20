@@ -2,12 +2,18 @@
   <img width="220" height="220" src="https://i.imgur.com/vYE79I9.png">
 </p>
 
+
+
 # ESPBug
 
 ESPBug is a rogue captive portal program which runs on the ESP8266 dev board, such as the NodeMCU (clones included). It is a social engennering tool which generates a WiFi network of a given name alluring people to connect  to it and enter some credential.
 
 # DISCLAIMER
 The source code given in this public repo is for educational use only. Stealing credential might be illegal depending on where you live. I am not liable for any actions on your behalf. This code is given with no warranties and liabilities. **Just be responsible OK?**
+
+# Some updates about the project
+
+Life being as it is, I was not able to work on this project at all for the last 8 months, and maybe won't be able to for the next few. The project is not dead though, I am just unable to work on it now. Some issues have been submitted regarding the language.h library not being detected. I cannot say with certainty why that is, but if I remember it's just a question of checking your path. I hope to be able to come back to this project as soon as possible, thanks for your understanding. 
 
 # Demonstration & How tos
 
