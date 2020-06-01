@@ -51,7 +51,7 @@ You want to go to the settings to prepare the hook. Let's go through all the set
  - Username: Default is **espbug**. Put what you want. This is the username to enter when you connect to the webpage. To access the settings etc...
  - Password: Default is **password**. As the Username. Put what you want here.
 
- - FTP: **STILL UNDER DEV.**
+ - FTP: **STILL UNDER DEV.**, commented out for the moment
 
 
 
@@ -83,7 +83,7 @@ Now you only need to install the board. `Tools -> Board: "<SOME BOARD NAME>" -> 
 ```
 esp8266
 ```
-by **ESP8266 Community**. I installed version `2.5.5`.
+by **ESP8266 Community**. I installed version ~~`2.5.5`~~ `2.6.0`.
 
 And YOU ARE DONE! Now, you need to open the `espbug_public.ino` and setup the correct parameters for the board.
 
@@ -93,12 +93,12 @@ Here are **MY** setup parameters
 Board: "NodeMCU 1.0 (ESP-12E Module)"
 Upload Speed: "115200"
 CPU Frequency: "160 MHz"
-Flash Size: "4M (3M SPIFFS)"
+Flash Size: "4M (FS:3MB OTA:~512KB)"
 Debug port: "Disabled"
 Debug Level: "None"
 IwIP Variant: "v2 Lower Memory"
 VTables: "Flash"
-Exceptions: "Disabled"
+Exceptions: "Disabled (new can abort)"
 Erase Flash: "All Flash Contents"
 SSL Support: "All SSL ciphers (most compatible)"
 Port : "<USB PORT>"
