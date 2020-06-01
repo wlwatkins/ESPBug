@@ -54,8 +54,13 @@ You want to go to the settings to prepare the hook. Let's go through all the set
  - FTP: **STILL UNDER DEV.**, commented out for the moment
 
 
-
 # Installation
+
+You should be able to download the binary from the release tab in github. 
+[https://github.com/willmendil/ESPBug/releases/tag/0.1](https://github.com/willmendil/ESPBug/releases/tag/0.1)
+and just updload the binary through the arduino IDE. Look below to see how to setup the board.
+
+# From source
 To get this code running on a nodeMCU like board - such as the one illustrated below - you need to install the [Arduino IDE] (! I have only tried on Linux, but this should work on any OS - virtual machine included).
 
 ![esp8266 image][esp8266]
@@ -85,7 +90,7 @@ esp8266
 ```
 by **ESP8266 Community**. I installed version ~~`2.5.5`~~ `2.6.0`.
 
-And YOU ARE DONE! Now, you need to open the `espbug_public.ino` and setup the correct parameters for the board.
+And YOU ARE DONE! Now, you need to open the `espbug.ino` and setup the correct parameters for the board.
 
 Here are **MY** setup parameters
 
