@@ -1,92 +1,37 @@
+/*
+  Blink
 
+  Turns an LED on for one second, then off for one second, repeatedly.
 
-#include <FS.h>
-#include <ArduinoJson.h>
-#include "languages.h"
-#include "config.h"
-#include "functions.h"
-#include "ledmsg.h"
+  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO
+  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to
+  the correct LED pin independent of which board is used.
+  If you want to know what pin the on-board LED is connected to on your Arduino
+  model, check the Technical Specs of your board at:
+  https://www.arduino.cc/en/Main/Products
 
-#include "filesystem.h"
+  modified 8 May 2014
+  by Scott Fitzgerald
+  modified 2 Sep 2016
+  by Arturo Guadalupi
+  modified 8 Sep 2016
+  by Colby Newman
 
+  This example code is in the public domain.
 
-#include "jsonfiles.h"
-#include "webfiles.h"
+  http://www.arduino.cc/en/Tutorial/Blink
+*/
 
-#include "servingWebPages.h"
-
-#define LED 2
-
-unsigned long previousMillisLoop = 0;        // will store last time LED was updated
-
+// the setup function runs once when you press reset or power the board
 void setup() {
-  Serial.begin(115200);
-  pinMode(LED, OUTPUT);
-
-  digitalWrite(LED, 1);
-  delay(100);
-  digitalWrite(LED, 0);
-
-
-  startSPIFFS();
-  logging("");
-  logging("");
-  logging("------ BOOTING ------");
-  logging("");
-
-  logging("setup :: Initialising File System... Success!");
-
-
-  logging("setup :: Starting LoadConfig...");
-  loadSettingJSON();
-  createSystemJSON();
-  logging("setup :: loadSettingJSON DONE");
-  // put your setup code here, to run once:
-  logging("setup :: Starting copyWebFiles ...");
-  copyWebFiles(true);
-  logging("setup :: copyWebFiles DONE");
-
-  logging("setup :: Starting copyWebFiles ...");
-  startAP();
-  logging("setup :: startAP DONE");
-
-
-  digitalWrite(LED, 1);
-  delay(500);
-  digitalWrite(LED, 0);
-  delay(500);
-  digitalWrite(LED, 1);
-  delay(500);
-  digitalWrite(LED, 0);
-  delay(500);
-  digitalWrite(LED, 1);
-  delay(500);
-  digitalWrite(LED, 0);
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
+// the loop function runs over and over again forever
 void loop() {
-  ftpSrv.handleFTP();
-  dnsServer.processNextRequest();
-  server.handleClient();
-  httpServer.handleClient();
-  ledmsgvoid();
-
-
-
-  // constants won't change:
-
-
-  unsigned long currentMillisLoop = millis();
-
-  if (currentMillisLoop - previousMillisLoop >= 2000) {
-    previousMillisLoop = currentMillisLoop;
-    client_status();
-
-  }
-
-
-
-
-
-
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
 }
