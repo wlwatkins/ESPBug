@@ -218,9 +218,9 @@ void startAP() {
 
     MDNS.addService("http", "tcp", 1337);
     dnsServer.start(DNS_PORT, "*", local_IP);
-    //if (ftpenabled==1){
-    //  ftpSrv.begin(String(ftp_username),String(ftp_password));
-    //}
+   // if (ftpenabled==1){
+   //   ftpSrv.begin(String(ftp_username),String(ftp_password));
+   // }
 
     // aggressively caching static assets
     // server.serveStatic("/js", SPIFFS, String("web/js").c_str(), "max-age=86400");
