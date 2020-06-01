@@ -2,7 +2,7 @@
   <img width="220" height="220" src="https://i.imgur.com/vYE79I9.png">
 </p>
 
-
+# A New restructured project was created at [https://github.com/guanicoe/ESPBug_PIO](https://github.com/guanicoe/ESPBug_PIO) using plateformio to ease up in the dev. The project will be reformets, not sure yet where i want continue it
 
 # ESPBug
 
