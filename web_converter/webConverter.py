@@ -7,14 +7,14 @@ from pathlib import Path, PurePath
 try:
     from css_html_js_minify.minify import process_single_html_file, process_single_js_file, process_single_css_file
 except ModuleNotFoundError:
-    print("\n[!] Requirements are not satisfied. Please install the 'anglerfish' package by running 'sudo python3 -m pip install anglerfish'.\n")
+    print("\n[!] Requirements are not satisfied. Please install the 'anglerfish' package by running 'python -m pip install anglerfish'.\n")
     exit()
 
 print("\nwebConverter for master\n")
 
 p = Path.cwd()
 parent = p.parent.parent
-q = PurePath('espbug_public')
+q = p #PurePath('ESPBug')
 arduino_file_path = str(os.path.join(str(parent / q), "webfiles.h"))
 datadir = parent / q
 q = PurePath('web_interface')
